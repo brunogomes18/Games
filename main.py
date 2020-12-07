@@ -60,8 +60,6 @@ i=0
 while i<11:
     pygame.draw.rect(win, (255,255,255), (x-10,y-10, 120, 120))
     pygame.draw.rect(win, (r,g,b), (x,y, 100, 100))
-    text = textList[i]  
-    win.blit(text, (x+20, y+20))
     i+=1
     r=randrange(255)
     g=randrange(255)
@@ -84,53 +82,85 @@ while run:
 
         if event.type == pygame.KEYDOWN:
             if event.key == pygame.K_r:
-                soundR.play()
+                textList[0] = font.render('R ', 1, (255,0,0))
+                soundR.play(5)
             if event.key == pygame.K_t:
-                soundT.play()
+                textList[1] = font.render('T ', 1, (255,0,0))
+                soundT.play(5)
             if event.key == pygame.K_y:
-                soundY.play()
+                textList[2] = font.render('Y ', 1, (255,0,0))
+                soundY.play(5)
             if event.key == pygame.K_u:
-                soundU.play()
+                textList[3] = font.render('U ', 1, (255,0,0))
+                soundU.play(5)
             if event.key == pygame.K_f:
-                soundF.play()
+                textList[4] = font.render('F ', 1, (255,0,0))
+                soundF.play(5)
             if event.key == pygame.K_g:
-                soundG.play()
+                textList[5] = font.render('G ', 1, (255,0,0))
+                soundG.play(5)
             if event.key == pygame.K_h:
-                soundH.play()
+                textList[6] = font.render('H ', 1, (255,0,0))
+                soundH.play(5)
             if event.key == pygame.K_c:
-                soundC.play()
+                textList[7] = font.render('C ', 1, (255,0,0))
+                soundC.play(5)
             if event.key == pygame.K_v:
-                soundV.play()
+                textList[8] = font.render('V ', 1, (255,0,0))
+                soundV.play(5)
             if event.key == pygame.K_b:
-                soundB.play()
+                textList[9] = font.render('B ', 1, (255,0,0))
+                soundB.play(5)
             if event.key == pygame.K_n:
-                soundN.play()
+                textList[10] = font.render('N ', 1, (255,0,0))
+                soundN.play(5)
 
         if event.type == pygame.KEYUP:
-            if event.key == pygame.K_r:
+            if event.key == pygame.K_r: 
+                textList[0] = font.render('R ', 1, (255,255,255))
                 soundR.stop()
             if event.key == pygame.K_t:
+                textList[1] = font.render('T ', 1, (255,255,255))
                 soundT.stop()
             if event.key == pygame.K_y:
+                textList[2] = font.render('Y ', 1, (255,255,255))
                 soundY.stop()
             if event.key == pygame.K_u:
+                textList[3] = font.render('U ', 1, (255,255,255))
                 soundU.stop()
             if event.key == pygame.K_f:
+                textList[4] = font.render('F ', 1, (255,255,255))
                 soundF.stop()
             if event.key == pygame.K_g:
+                textList[5] = font.render('G ', 1, (255,255,255))
                 soundG.stop()
             if event.key == pygame.K_h:
+                textList[6] = font.render('H ', 1, (255,255,255))
                 soundH.stop()
             if event.key == pygame.K_c:
+                textList[7] = font.render('C ', 1, (255,255,255))
                 soundC.stop()
             if event.key == pygame.K_v:
+                textList[8] = font.render('V ', 1, (255,255,255))
                 soundV.stop()
             if event.key == pygame.K_b:
+                textList[9] = font.render('B ', 1, (255,255,255))
                 soundB.stop()
             if event.key == pygame.K_n:
+                textList[10] = font.render('N ', 1, (255,255,255))
                 soundN.stop()
-
-              
+    x= 50
+    y= 100
+    i=0
+    
+    while i<11:
+        text = textList[i]
+        win.blit(text, (x+20, y+20)) 
+        x+=200
+        i+=1
+        if x > 700:   
+            x = x%700
+            y+=200      
 
 
     pygame.display.update()
