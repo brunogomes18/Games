@@ -13,7 +13,7 @@ while run:
         if event.type == pygame.QUIT :
             run = False
     
-    pygame.draw.rect(win, (255, 0, 0), (0,0, 50, 50))
+    pygame.draw.rect(win, (0, 255, 0), (0,0, 50, 50))
     pygame.display.update()
 
 pygame.quit()
